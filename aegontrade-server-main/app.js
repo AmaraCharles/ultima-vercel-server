@@ -31,7 +31,7 @@ app.use("/auth", loginAuthRouter);
 app.use("/auth", verifyAuthRouter);
 app.use("/auth", registerAuthRouter);
 app.use("/auth", fogortPasswordAuthRouter);
-app.use("/auth", kycAuthRouter);
+// app.use("/auth", kycAuthRouter);
 
 app.use("/transactions", transactionsRouter);
 
