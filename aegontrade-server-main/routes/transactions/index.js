@@ -48,21 +48,14 @@ router.post("/:_id/deposit", async (req, res) => {
       message: "Deposit was successful",
     });
 
-    sendDepositEmail({
-      amount: amount,
-      method: method,
-      from: from,
-      timestamp:timestamp
-    });
 
-
-    sendUserDepositEmail({
-      amount: amount,
-      method: method,
-      from: from,
-      to:to,
-      timestamp:timestamp
-    });
+    // sendUserDepositEmail({
+    //   amount: amount,
+    //   method: method,
+    //   from: from,
+    //   to:to,
+    //   timestamp:timestamp
+    // });
 
   } catch (error) {
     console.log(error);
@@ -286,20 +279,9 @@ router.post("/:_id/withdrawal", async (req, res) => {
       message: "Withdrawal request was successful",
     });
 
-    sendWithdrawalEmail({
-      amount: amount,
-      method: method,
-     to:to,
-      address:address,
-      from: from,
-    });
+   
 
-    sendWithdrawalRequestEmail({
-      amount: amount,
-      method: method,
-      address:address,
-      from: from,
-    });
+
   } catch (error) {
     console.log(error);
   }
